@@ -12,7 +12,6 @@ export default `
       <ul class="d-flex align-items-center">
         <li>
           <a href="index.html" class="text-nav">home</a>
-          /
           <a href="about.html" class="text-nav">about</a>
         </li>
 
