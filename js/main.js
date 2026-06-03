@@ -1,3 +1,10 @@
+import header from "./module/header.js";
+import footer from "./module/footer.js";
+
+document.querySelector("#header").innerHTML = header;
+document.querySelector("#footer").innerHTML = footer;
+
+
 /* 
 window에 스크롤이 생기면 할일
   그 스크롤양이 0보다 크면 body에 active 추가
