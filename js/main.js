@@ -10,7 +10,7 @@ window에 스크롤이 생기면 할일
   0이면 active 제거
 */
 // const body = document.body;
-const header = document.querySelector("body > header");
+const header = document.querySelector("#header header");
 
 window.addEventListener("scroll", () => {
   if (window.scrollY > 0) {
@@ -20,16 +20,20 @@ window.addEventListener("scroll", () => {
   }
 });
 
-const slideWrapper = document.querySelector(".slidewrapper"),
-  slideContainer = slideWrapper.querySelector(".slidecontainer"),
-  slides = slideContainer.querySelectorAll("li"),
-  slideCount = slides.length,
-  prevBtn = slideWrapper.querySelector(".prev"),
-  nextBtn = slideWrapper.querySelector(".next");
-let currentIdx = 0;
+const slideWrapper = document.querySelector(".slidewrapper");
+
+if (slideWrapper) {
+  const slideContainer = slideWrapper.querySelector(".slidecontainer");
+  const slides = slideContainer.querySelectorAll("li");
+  const slideCount = slides.length;
+  const prevBtn = slideWrapper.querySelector(".prev");
+  const nextBtn = slideWrapper.querySelector(".next");
+
+  let currentIdx = 0;
+
 
 /* slideContainer 너비 지정 */
-slideContainer.style.width = `${slideCount * 100}%`;
+  slideContainer.style.width = `${slideCount * 100}%`;
 
 /* 
 슬라이드 이동 함수 
@@ -38,9 +42,9 @@ moveSlide 함수 생성,
 num 번호에 해당하는 슬라이드 보이도록 이동
 transform:translateX(33.3333%)
 */
-function moveSlide(num) {
-  slideContainer.style.transform = `translateX(${-(num / slideCount) * 100}%)`;
-  currentIdx = num;
+  function moveSlide(num) {
+    slideContainer.style.transform = `translateX(${-(num / slideCount) * 100}%)`;
+    currentIdx = num;
 }
 
 //버튼으로 이동하기
@@ -55,11 +59,12 @@ function moveSlide(num) {
   (첫번째 슬라이드면 마지막 슬라이드로 이동)
   moveSlide(nextIdx) 실행  
 */
-nextBtn.addEventListener("click", () => {
-  let nextIdx = (currentIdx + 1) % slideCount;
-  moveSlide(nextIdx);
-});
-prevBtn.addEventListener("click", () => {
-  let nextIdx = (currentIdx - 1 + slideCount) % slideCount;
-  moveSlide(nextIdx);
-});
+  nextBtn.addEventListener("click", () => {
+    let nextIdx = (currentIdx + 1) % slideCount;
+    moveSlide(nextIdx);
+  });
+  prevBtn.addEventListener("click", () => {
+    let nextIdx = (currentIdx - 1 + slideCount) % slideCount;
+    moveSlide(nextIdx);
+  });
+}
