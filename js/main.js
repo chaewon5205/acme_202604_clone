@@ -1,9 +1,8 @@
-import header from "./module/header.js";
-import footer from "./module/footer.js";
+import { renderHeader } from "./module/header.js";
+import { renderFooter } from "./module/footer.js";
 
-document.querySelector("#header").innerHTML = header;
-document.querySelector("#footer").innerHTML = footer;
-
+document.querySelector("#header").innerHTML = renderHeader();
+document.querySelector("#footer").innerHTML = renderFooter();
 
 /* 
 window에 스크롤이 생기면 할일

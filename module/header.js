@@ -1,5 +1,6 @@
-export default `
-<header>
+export function renderHeader() {
+  return `
+  <header>
   <div class="container d-flex justify-content-between align-items-center">
     <h1 class="logo">
       <a href="index.html">
@@ -32,4 +33,5 @@ export default `
     </nav>
   </div>
 </header>
-`;
+  `;
+}

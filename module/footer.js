@@ -1,4 +1,5 @@
-export default `
+export function renderFooter() {
+ return `
 <footer class="inner-pd d-flex flex-column align-items-center g-1">
   <p>&copy; 2014. All rights reserved. Questions?</p>
   <p>
@@ -7,3 +8,4 @@ export default `
   </p>
 </footer>
 `;
+}
